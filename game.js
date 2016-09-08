@@ -13,10 +13,13 @@ function create() {
 	flies.setAll('anchor.x', 0.5);
 	flies.setAll('anchor.y', 0.5);
 
+	for(var i=0; i<3; i++){
+		//flies.create(game.input.x, game.input.y, 'fly');
+		flies.create(game.world.randomX, game.world.randomY, 'fly');
+	}
 	game.input.onTap.add(function(){
-		var fly = flies.create(game.input.x, game.input.y, 'fly');
-		fly.animations.add('flying');
-		fly.animations.play('flying',15,true);
+		//fly.animations.add('flying');
+		//fly.animations.play('flying',15,true);
 	},this);
 
 }
@@ -25,5 +28,5 @@ function update() {
 }
 
 function render() {
-	//game.debug.pointer( game.input.activePointer );
+	game.debug.pointer( game.input.activePointer );
 }
